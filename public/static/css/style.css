@@ -1,0 +1,165 @@
+/***↓Global Variables↓***/
+:root {
+--background-color: #15161e;
+--header-color: #2c2a2a;
+--sidebar-color: #1e1e1e;
+--areatext-color: #1e1e1e;
+--inputarea-color: #1e1e1e;
+--writen1-color: #e0e0e0;
+}
+/***↑Global Variables↑***/
+
+/*----------------------------↓ Global Settings ↓----------------------------*/
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+    background-color: var(--background-color);
+    color: var(--writen1-color);
+}
+
+.container { /*Default style Mobile*/
+    display: grid;
+    width: 100%;  
+    height: 100vh;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 50px 1fr 100px;
+    grid-template-areas: /* define the design of our layout*/
+        "header   header"
+        "sidebar  messages"
+        "sidebar  input";
+    border-radius: 0; /*Borderless*/
+}
+
+/*-----↓ Big Screen ↓-----*/
+@media (min-width: 768px) {
+    .container{
+        width: 768px;
+        height: 70vh;
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+            "header   header"
+            "sidebar  messages"
+            "sidebar  input";
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Assign each item to an area of our design*/
+.chat-header       { grid-area: header; }
+.contacts-sidebar  { grid-area: sidebar; }
+.messages-area     { grid-area: messages; }
+.message-input-area{ grid-area: input; }
+
+/*Basic visual styles to each area*/
+.chat-header, .contacts-sidebar, .messages-area, .message-input-area {
+    border: 1px solid #333; /*Subtle border to separate areas*/
+    padding: 10px;
+    background-color: var(--header-color);
+}
+/*----------------------------↑ Global Settings ↑----------------------------*/
+
+/*----------------------------↓ Header ↓----------------------------*/
+.chat-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*-----↓ Title Setup ↓-----*/
+.chat-header .setup-title{
+    color: #f3df4a;
+    cursor: default;
+}
+.chat-header .setup-title:hover{ /*:hover: When the mouse is over the element*/
+    transform: scale(1.1);
+}
+.chat-header .setup-title:active{ /*:active: When the element is being clicked*/
+    transform: scale(0.95);
+}
+/*-----↑ Title Setup ↑-----*/
+
+/*-----↓ Button Setup ↓-----*/
+.chat-header .setup-btn{
+    background-color: #7f4311;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 35px;
+    border-radius: 20%;
+    
+}
+.chat-header .setup-btn img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20%;
+}
+.chat-header .setup-btn:hover{
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+.chat-header .setup-btn:active{
+    transform: scale(0.95);
+}
+.chat-header .setup-btn, .chat-header .setup-btn img{
+    transition: all 0.2s ease-in-out;
+}
+/*-----↑ Button Setup ↑-----*/
+
+/*----------------------------↑ Header ↑----------------------------*/
+
+
+/*----------------------------↓ Sidebar ↓----------------------------*/
+.contacts-sidebar {
+    background-color: var(--sidebar-color);
+}
+/*----------------------------↑ Sidebar ↑----------------------------*/
+
+
+/*----------------------------↓ Area ↓----------------------------*/
+.messages-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /*Space between the messages*/
+    font-size: 10pt;
+    background-color: var(--areatext-color);
+}
+/*----------------------------↑ Area ↑----------------------------*/
+
+
+/*----------------------------↓ Input Area ↓----------------------------*/
+.message-input-area {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--inputarea-color);
+}
+/*----------------------------↑ Input Area ↑----------------------------*/
+
+
+/*----------------------------↓ Functions Bar ↓----------------------------*/
+.functions-bar {
+    padding-bottom: 5px;
+    font-size: 0.8em;
+    color: #888;
+}
+/*----------------------------↑ Functions Bar ↑----------------------------*/
+
+
+/*----------------------------↓ Area Textarea ↓----------------------------*/
+.message-input-area textarea {
+    height: 100%;
+    resize: none; /* Impede que o usuário redimensione a textarea */
+    background-color: #252525;
+    border: 1px solid #444;
+    color: #e0e0e0;
+    padding: 5px;
+}
+/*----------------------------↑ Area Textarea ↑----------------------------*/
