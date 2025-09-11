@@ -10,9 +10,11 @@
 
 <body>
     <div class="container"> <!--main div-->
-        
+
         <header class="chat-header">
-            <h3 class="setup-title">CripChat🔐</h3>
+            <button id="toggle-sidebar-btn">⬅️</button>
+
+            <h3 class="setup-title">CripChat 🔐</h3>
 
             <button id="setup" class="setup-btn" onclick="">
                 <img src="../static/assets/wrench-setupREADY.png" alt="Setup">
@@ -20,12 +22,20 @@
         </header>
 
         <aside class="contacts-sidebar">
-            Contatos
-            <ul>
-                <li>Contato 1</li>
-                <li>Contato 2</li>
-                <li>Contato 3</li>
-            </ul>
+            <a href="#" class="contact">
+                <span class="contact-avatar">C</span>
+                <span class="contact-name">Carina</span>
+            </a>
+
+            <a href="#" class="contact">
+                <span class="contact-avatar">G</span>
+                <span class="contact-name">Gemini</span>
+            </a>
+
+            <a href="#" class="contact">
+                <span class="contact-avatar">R</span>
+                <span class="contact-name">Rafael</span>
+            </a>
         </aside>
 
         <main class="messages-area">
@@ -42,5 +52,7 @@
         </footer>
 
     </div>
+    <script src="../static/js/main.js" defer> </script>
 </body>
+
 </html>
