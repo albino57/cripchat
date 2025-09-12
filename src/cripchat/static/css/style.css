@@ -10,6 +10,11 @@
 
 /***↑Global Variables↑***/
 
+*, /*Universal box-sizing reset for more intuitive and predictable layouts.*/
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 /*----------------------------↓ Global Settings ↓----------------------------*/
 body,
@@ -256,6 +261,7 @@ html {
     border: 1px solid #444;
     color: #e0e0e0;
     padding: 5px;
+    font-size: 16px; /*This code avoid zoom using cellphone*/
 }
 
 /*----------------------------↑ Area Textarea ↑----------------------------*/
